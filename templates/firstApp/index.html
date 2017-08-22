@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+  <head>
+    <meta charset = "utf-8">
+    <title>My First App Django level two</title>
+    <link rel = "stylesheet" href = "{% static "css/mystyle.css" %}">
+  </head>
+  <body>
+
+  {% if access_record %}
+    <div class="djangotwo">
+      <table>
+        <thead class = "djangotwo">
+          <th>Name</th>
+          <th>Date Accessed</th>
+        </thead>
+        <tbody>
+          {% for record in access_record %}
+            <tr>
+              <td class="djangotwo">{{record.name}}</td>
+              <td class="djangotwo">{{record.date}}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  {% endif %}
+  </body>
+</html>
